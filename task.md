@@ -1,0 +1,35 @@
+# Task List: Verifiable Synthesis of Robust Neural Architectures
+
+- [x] Environment Setup
+    - [x] Create `requirements.txt`
+    - [x] Create directory structure
+- [x] Phase 1: Formal Compositional Analysis
+    - [x] Implement `SpectralConv2d` in `src/primitives/spectral_conv.py`
+    - [x] Implement `compute_architectural_lipschitz_bound` in `src/primitives/lipschitz_layers.py`
+- [x] Phase 2: Gatekeeper API
+    - [x] Implement `FormalGatekeeper` in `src/gatekeeper/api.py`
+    - [x] Implement `STLTrajectoryMonitor` in `src/gatekeeper/trajectory_monitor.py`
+- [x] Phase 3: Zero-Cost Proxies & Metrics
+    - [x] Implement proxies in `src/metrics/zero_cost_proxies.py`
+    - [x] Implement diversity metric in `src/metrics/diversity.py`
+- [x] Phase 4: Search Space Interface
+    - [x] Implement `NASBench201Interface` in `src/search_space/nas_bench_201.py`
+- [x] Phase 5: Training Protocols
+    - [x] Implement PGD training in `src/training/pgd_training.py`
+    - [x] Implement standard training in `src/training/standard_training.py`
+- [x] Phase 6: Verification Interface
+    - [x] Implement `ABCROWNVerifier` in `src/verification/abcrown_interface.py`
+- [x] Phase 7: Search Algorithms
+    - [x] Implement `ConstrainedNSGA2` in `src/search/nsga2.py`
+    - [x] Implement `ConstrainedBayesianOpt` in `src/search/bayesian_opt.py`
+    - [x] Implement `random_search_constrained` in `src/search/random_search.py`
+- [x] Phase 8: Pilot Study
+    - [x] Create `config/pilot_study.yaml`
+    - [x] Implement `scripts/pilot_study.py`
+- [x] Phase 9: Full Search Experiments
+    - [x] Create `config/search_config.yaml`
+    - [x] Implement `scripts/run_search_nsga2.py`
+    - [x] Implement `scripts/run_search_bo.py`
+    - [x] Implement `scripts/run_baselines.py`
+- [x] Phase 10: Statistical Analysis & Visualization
+    - [x] Implement `scripts/analyze_results.py`
