@@ -205,3 +205,6 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+NATS-tss-v1_0-3ffb9-simple.tar
+NATS-tss-v1_0-3ffb9-simple/
+k8s/
