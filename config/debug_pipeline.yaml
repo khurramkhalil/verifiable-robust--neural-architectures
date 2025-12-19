@@ -1,0 +1,35 @@
+search:
+  use_lipschitz_constraint: True
+  lipschitz_threshold: 0.75
+  
+dataset: cifar10
+data_path: ./data
+
+nsga2:
+  population_size: 4
+  generations: 1
+  offspring_size: 4
+  crossover_prob: 0.9
+  mutation_prob: 0.02
+
+gatekeeper:
+  enabled: True
+  mode: strict
+  spectral_norm: True
+
+training:
+  type: standard
+  start_epochs: 1
+
+verification:
+  enabled: True
+  epochs: 1
+  config_path: config/crown_config.yaml
+  num_samples: 10
+  final_timeout: 10
+
+logging:
+  wandb_project: Verifiable-Robust-NAS
+  save_dir: ./results
+
+debug: True

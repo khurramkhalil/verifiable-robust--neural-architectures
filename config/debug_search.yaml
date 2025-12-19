@@ -1,0 +1,39 @@
+search_space: nasbench201
+dataset: cifar10
+
+gatekeeper:
+  lipschitz_threshold: 15.0
+  diversity_threshold: 0.1
+  degradation_tolerance: 5.0
+
+nsga2:
+  population_size: 4
+  generations: 2
+  mutation_rate: 0.1
+  crossover_rate: 0.9
+
+bayesian_opt:
+  n_initial: 4
+  n_iterations: 2
+  batch_size: 2
+  acquisition: qNEHVI
+
+objectives:
+  - name: accuracy_proxy
+    type: synflow
+    direction: maximize
+  - name: robustness_proxy
+    type: lipschitz_bound
+    direction: minimize
+    
+training:
+  epochs: 1
+  epsilon: 0.03137
+  pgd_steps: 1
+  
+verification:
+  epochs: 1 # New param for quick debug
+  final_timeout: 60
+  num_samples: 10
+  
+debug: true

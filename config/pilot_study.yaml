@@ -1,0 +1,20 @@
+dataset: cifar10
+n_samples: 2  # Two models
+sampling_strategy: stratified
+epsilon_values: [0.03137]
+
+training:
+  epochs: 1  # One epoch
+  optimizer: sgd
+  lr: 0.1
+  momentum: 0.9
+  pgd_steps: 4
+  pgd_alpha: 0.00784
+
+verification:
+  timeout: 60
+  verifier: alpha-beta-crown
+
+analysis:
+  correlation_threshold: 0.3
+  significance_level: 0.01
